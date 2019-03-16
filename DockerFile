@@ -3,11 +3,11 @@ WORKDIR /app
 
 # Copy csproj and restore as distinct layers
 COPY . ./
-RUN dotnet restore .\Microservice
-RUN dotnet publish  .\Microservice\Gateway\Gateway.csproj -c Release -o out
+RUN dotnet restore .
+RUN dotnet publish  .\Gateway\Gateway.csproj -c Release -o out
 
 # Build runtime image
 FROM microsoft/dotnet:aspnetcore-runtime
 WORKDIR /app
-COPY --from=build-env /app/Microservice/Gateway/out .
+COPY --from=build-env /app/Gateway/out .
 ENTRYPOINT ["dotnet", "Gateway.dll"]
