@@ -1,0 +1,20 @@
+{
+  "ReRoutes": [
+	{
+		"DownstreamPathTemplate": "/{url}",
+		"DownstreamScheme": "https",
+		"DownstreamHostAndPorts": [
+				{
+					"Host": "172.16.82.145",
+					"Port": 8080,
+				}
+			],
+		"UpstreamPathTemplate": "/{url}",
+		"UpstreamHost": "ares05.ssdevrd.com"
+	}
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration"
+  }
+}
