@@ -1,0 +1,2 @@
+FROM ocelot
+COPY configuration.json Configuration

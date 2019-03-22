@@ -1,0 +1,64 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/AirWatch{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.0.106",
+		  "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/AirWatch{everything}"
+    },
+	{
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.0.106",
+		  "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/snake/{everything}"
+    },
+	{
+      "DownstreamPathTemplate": "/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.0.106",
+		  "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/snake"
+    },
+		{
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.0.106",
+		  "Port": 8090
+        }
+      ],
+      "UpstreamPathTemplate": "/chess/{everything}"
+    },
+	{
+      "DownstreamPathTemplate": "/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.0.106",
+		  "Port": 8090
+        }
+      ],
+      "UpstreamPathTemplate": "/chess"
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration"
+  }
+}
+  

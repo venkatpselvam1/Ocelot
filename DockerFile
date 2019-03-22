@@ -1,13 +1,10 @@
 FROM microsoft/dotnet:sdk AS build-env
-WORKDIR /app
-
-# Copy csproj and restore as distinct layers
-COPY . ./
-RUN dotnet restore .
-RUN dotnet publish  .\Gateway\Gateway.csproj -c Release -o out
-
-# Build runtime image
+COPY . Gateway
+WORKDIR Gateway
+WORKDIR Gateway
+RUN dotnet restore
+RUN dotnet publish -c release -o artificat
 FROM microsoft/dotnet:aspnetcore-runtime
 WORKDIR /app
-COPY --from=build-env /app/Gateway/out .
+COPY --from=build-env /Gateway/Gateway/artificat .
 ENTRYPOINT ["dotnet", "Gateway.dll"]

@@ -5,22 +5,22 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 81
+          "Host": "192.168.0.106",
+		  "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/chess/{everything}"
+      "UpstreamPathTemplate": "/{everything}"
     },
     {
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 81
+          "Host": "192.168.0.106",
+		  "Port": 80
         }
       ],
-      "UpstreamPathTemplate": "/chess"
+      "UpstreamPathTemplate": "/"
     }
   ],
   "GlobalConfiguration": {
